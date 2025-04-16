@@ -15,8 +15,9 @@ const Admin = () => {
           </div>
           <CountChat />
       </div>
-      {/* RIGHT */}
-      <div className="w-full lg:w-1/3 text-green-900">RIGHT</div>
+      
+      <div className="w-full lg:w-1/3 text-green-900">
+      </div>
     </div>
   );
 };
