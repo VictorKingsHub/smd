@@ -47,7 +47,7 @@ const data = [
     income: 3490,
     expenses: 4300,
   },
-  {
+    {
     name: "Aug",
     income: 3490,
     expenses: 4300,
@@ -76,54 +76,32 @@ const data = [
 
 const FinanceChat = () => {
   return (
-    <div className="bg-white rounded-xl w-full h-full p-4">
+    <div className="rounded-xl w-full h-full p-4 bg-white" style={{ height: '400px' }}>
       <div className="flex justify-between items-center p-2">
         <span className="text-lg font-semibold"> Finance </span>
         <div>
-          {/* Replace with your actual icon component or SVG */}
           <span> b Icon </span>
         </div>
       </div>
-      <ResponsiveContainer width="100%" height="90%">
+      <ResponsiveContainer width="100%" height="100%">
         <LineChart
+          width={500}
+          height={300}
           data={data}
           margin={{
-            top: 5,
+            top: 20, 
             right: 30,
             left: 20,
-            bottom: 5,
+            bottom: 20, 
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="#ddd" />
-          <XAxis
-            dataKey="name"
-            axisLine={false}
-            tick={{ fill: "#d1d5db" }}
-            tickLine={false}
-            tickMargin={20}
-          />
-          <YAxis axisLine={false} tick={{ fill: "#d1d5db" }} tickLine={false} />
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
           <Tooltip />
-          <Legend
-            align="center"
-            verticalAlign="bottom" // Changed to bottom for better visibility
-            wrapperStyle={{ paddingTop: "10px" }}
-          />
-          <Line
-            type="monotone"
-            dataKey="income"
-            stroke="#C3EBFA"
-            activeDot={{ r: 8 }}
-            strokeWidth={5}
-            name="Income"
-          />
-          <Line
-            type="monotone"
-            dataKey="expenses"
-            stroke="#CFCEFF"
-            name="Expenses"
-            strokeWidth={5}
-          />
+          <Legend />
+          <Line type="monotone" dataKey="income" stroke="#8884d8" activeDot={{ r: 8 }} name="Income" />
+          <Line type="monotone" dataKey="expenses" stroke="#82ca9d" name="Expenses" />
         </LineChart>
       </ResponsiveContainer>
     </div>

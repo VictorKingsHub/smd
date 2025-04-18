@@ -66,7 +66,6 @@ const CountChat = () => {
         </div>
       </div>
       <div className="bg-white w-full rounded-xl p-2">
-        
         <FinanceChat />
       </div>
     </div>
